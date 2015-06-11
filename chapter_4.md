@@ -1,5 +1,18 @@
 # JavaScript DOM 编程艺术
 ## 第四章
+### 书中此章完整代码
+
+```
+function showPic(whichpic){
+    var source = whichpic.getAttribute("href");
+    var placeholder = document.getElementById("placeholder");
+    placeholder.setAttribute("src", source);
+    var text = whichpic.getAttribute("title");
+    var description = document.getElementById("description");
+    description.firstChild.nodeValue = text;
+}
+```
+
 ### setAttribute 方法
 ```
 setAttribute("string name", string value);
@@ -44,3 +57,24 @@ alert (body_element.nodeType);
 - 属性节点的 nodeType 属性值是 2。
 - 文本节点的 nodeType 属性值是 3。
 - 可以根据 nodeType 的值对特定类型的节点进行处理（if）。
+
+### nodeValue 属性
+- 如果想要改变一个节点的值，就要使用 nodeValue 属性，它用来得到和设置一个节点的值。
+- 用 nodeValue 获取 description 对象的值并不是包含在这个段落里的文本。里面的文本是另一种节点，是 p 元素的第一个子节点。
+```
+alert (description.childNodes[0].nodeValue);
+```
+
+### firstChild 和 lastChild 属性
+- 数组元素 childNodes[0] 有一个更直观易读的同义词，只要是访问 childNodes 数组的第一个元素，都可以写成 firstChild：
+```
+node.firstChild
+node.childNodes[0]
+```
+- 与之相对的是 lastChild 属性。如果不使用 lastChild 属性访问最后一个元素，则要使用下面这个复杂的语法：
+```
+node.childNodes[node.childNodes.length - 1];
+```
+
+###小结
+初次使用 DOM 脚本编写了一个图片库脚本，了解了基本的获取属性、设置属性值、事件处理函数、找出正确节点的方法。
