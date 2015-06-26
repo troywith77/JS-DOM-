@@ -121,3 +121,13 @@ getMinutes()|	返回 Date 对象的分钟 (0 ~ 59)。
 getMonth()|	从 Date 对象返回月份 (0 ~ 11)。
 getSeconds()	|返回 Date 对象的秒数 (0 ~ 59)。
 getTime()|	返回 1970 年 1 月 1 日至今的毫秒数。
+
+- 运算符 + 可以把字符串转换为数字，如果字符串里的内容不是数字的话，那么字符串仍会被转换，但值为NaN
+- #####自动转换类型 Type Conversion<br>
+当 JavaScript 尝试操作一个 "错误" 的数据类型时，会自动转换为 "正确" 的数据类型。
+```
+5 + null    // 返回 5         because null is converted to 0
+"5" + null  // 返回"5null"   because null is converted to "null"
+"5" + 1     // 返回 "51"      because 1 is converted to "1"  
+"5" - 1     // 返回 4         because "5" is converted to 5
+```
