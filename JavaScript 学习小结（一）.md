@@ -6,6 +6,14 @@
 alert(document.getElementsByTagName("h1")[0].innerHTML) 
 //I love <em>JavaScript</em>
 ```
+- 使用childNodes.nodeValue来更改文本节点的值时需要先选择文本节点：
+```
+<p id="demo">点击<mark>下面</mark>的按钮来显示今天是<em>周几</em></p>
+var para = document.getElementById("demo");
+document.write(para.firstChild.nodeValue);  //点击
+document.write(para.lastChild.nodeValue);  //null
+document.write(para.childNodes[2].nodeValue);  //的按钮来显示今天是
+```
 
 - 改变CSS的方法是：element.style.property = "value" ;
 - isNaN()方法判断一个值是否是数字
@@ -52,7 +60,7 @@ person.fullName() //调用方法，如onclick = person.fullName();
 ```
 - 如果把值赋给尚未声明的变量，该变量将被自动作为全局变量声明。
 - 如果在函数内直接给全局变量赋值将会覆盖全局变量的值。
-- ###字符串方法
+- #####字符串方法
 
 Method | 描述
 ---|---
@@ -92,3 +100,24 @@ default:
  n 与 case 1 和 case 2 不同时执行的代码
 }
 ```
+- 数字使用 .toString( ) 方法需要添加括号； String( )
+- #####将字符串转换为数字
+```
+Number("3.14")    // 返回 3.14
+Number(" ")       // 返回 0 
+Number("")        // 返回 0
+Number("99 88")   // 返回 NaN
+```
+- Date()对象
+
+方法 | 描述
+---|---
+getDate()|	从 Date 对象返回一个月中的某一天 (1 ~ 31)。
+getDay()|	从 Date 对象返回一周中的某一天 (0 ~ 6)。
+getFullYear()|	从 Date 对象以四位数字返回年份。
+getHours()|	返回 Date 对象的小时 (0 ~ 23)。
+getMilliseconds()|	返回 Date 对象的毫秒(0 ~ 999)。
+getMinutes()|	返回 Date 对象的分钟 (0 ~ 59)。
+getMonth()|	从 Date 对象返回月份 (0 ~ 11)。
+getSeconds()	|返回 Date 对象的秒数 (0 ~ 59)。
+getTime()|	返回 1970 年 1 月 1 日至今的毫秒数。
