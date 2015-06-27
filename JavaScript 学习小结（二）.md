@@ -1,3 +1,4 @@
+#JavaScript 学习小结（二）
 ##JavaScript 错误 - throw、try 和 catch
 try 语句测试代码块的错误。（运行代码）
 
